@@ -31,3 +31,39 @@ sources:
             tests:
               - unique
               - not_null
+      - name: adwords
+        identifier: raw_gz_adwords
+        description: campaigns run over this platform / we have one row per campaign_key+date_date
+        columns:
+          - name: "(campaign_key || '-' || date_date)"
+            description: primary key of the table
+            tests:
+              - unique
+              - not_null
+      - name: bing
+        identifier: raw_gz_bing
+        description: campaigns run over this platform / we have one row per campaign_key+date_date
+        columns:
+          - name: "(campaign_key || '-' || date_date)"
+            description: primary key of the table
+            tests:
+              - unique
+              - not_null
+      - name: criteo
+        identifier: raw_gz_criteo
+        description: campaigns run over this platform / we have one row per campaign_key+date_date
+        columns:
+          - name: "(campaign_key || '-' || date_date)"
+            description: primary key of the table
+            tests:
+              - unique
+              - not_null
+      - name: facebook
+        identifier: raw_gz_facebook
+        description: campaigns run over this platform / we have one row per campaign_key+date_date
+        columns:
+          - name: "(campaign_key || '-' || date_date)"
+            description: primary key of the table
+            tests:
+              - unique
+              - not_null
