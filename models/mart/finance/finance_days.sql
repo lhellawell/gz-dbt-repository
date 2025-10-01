@@ -7,7 +7,6 @@
 -- Total shipping fees
 -- Total log costs
 -- Total quantity of products sold.
-{{config (materialized='table') }}
 select
     m.date_date,
     count(m.orders_id) as total_number_of_transactions,
