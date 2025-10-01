@@ -3,4 +3,6 @@
 --- Operational_margin = margin + shipping_fee - log_cost - ship_cost
 
 select *
-from {{ref('int_orders_margin') }}
+from {{ref('int_orders_margin') }} as o
+left join {{ref('stg_raw_ship')}} as s
+on o.orders_id = s.orders_id
