@@ -5,7 +5,10 @@
 select
     o.orders_id,
     o.date_date,
-    SUM(margin + shipping_fee - logcost - ship_cost) as operational_margin
+    sum(s.shipping_fee) as shipping_fee,
+    sum(s.logcost) as logcost,
+    sum(s.ship_cost) as ship_cost,
+    sum(margin + shipping_fee - logcost - ship_cost) as operational_margin
 from {{ref('int_orders_margin') }} as o
 left join {{ref('stg_raw_ship')}} as s
 on o.orders_id = s.orders_id
